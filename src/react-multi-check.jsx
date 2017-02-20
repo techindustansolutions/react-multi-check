@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Checkable = ({label, onSelect, selected, onClick}) => {
+const Checkable = ({label, onSelect, selected, onClick, elemActiveStyle, elemStyle}) => {
 	return (
-		<div onClick={onClick && onClick} className={"checkable" + ( selected ? ' active' : '')}>
-			<span className="label">{label}</span>
+		<div onClick={onClick && onClick} style={selected ? elemActiveStyle && elemActiveStyle : elemStyle && elemStyle} className={"checkable" + ( selected ? ' active' : '')}>
+			<span className="checkable-label">{label}</span>
 			{selected ? onSelect : null}
 		</div>
 	)
@@ -52,11 +52,11 @@ export default class MultiCheck extends React.Component {
     }
 
 	render() {
-		let {elements} = this.props;
+		let {elements, selectItem, elemActiveStyle, elemStyle} = this.props;
 		return (
 			<div className="react-multi-check">
 				{elements ? elements.map((element, index) => {
-					return <Checkable key={index} label={element.label} onSelect={"selected"} onClick={() => this.updateMultipleSelect(index)} selected={this.isSelected(index)} />
+					return <Checkable elemActiveStyle={elemActiveStyle} elemStyle={elemStyle} key={index} label={element.label} onSelect={selectItem} onClick={() => this.updateMultipleSelect(index)} selected={this.isSelected(index)} />
 				}) : null}
 			</div>
 		)
