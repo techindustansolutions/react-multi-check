@@ -1,0 +1,36 @@
+{
+  "name": "react-multi-check",
+  "version": "1.0.0",
+  "description": "Select multiple options at once",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src/react-multi-check.jsx -o index.js",
+    "dev": "./node_modules/.bin/babel src/react-multi-check.jsx  -o example/react-multi-check.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techindustansolutions/react-multi-check"
+  },
+  "bugs": {
+    "url": "https://github.com/techindustansolutions/react-multi-check/issues"
+  },
+  "keywords": [
+    "react-multi-check",
+    "react",
+    "react component",
+    "multiple",
+    "select"
+  ],
+  "author": "Manoj Singh Negi",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
+  }
+}
