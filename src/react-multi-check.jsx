@@ -56,7 +56,7 @@ export default class MultiCheck extends React.Component {
 		return (
 			<div className="react-multi-check">
 				{elements ? elements.map((element, index) => {
-					return <Checkable label={element.label} onSelect={"selected"} onClick={() => this.updateMultipleSelect(index)} selected={this.isSelected(index)} />
+					return <Checkable key={index} label={element.label} onSelect={"selected"} onClick={() => this.updateMultipleSelect(index)} selected={this.isSelected(index)} />
 				}) : null}
 			</div>
 		)
